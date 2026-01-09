@@ -1,97 +1,72 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Chore Champions
 
-# Getting Started
+A gamified chore tracking app where completing household tasks earns points to buy weapons and battle family members.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Tech Stack
 
-## Step 1: Start Metro
+- **Frontend:** React Native 0.83.1 (Android)
+- **Backend:** Spring Boot (planned)
+- **Database:** H2 (local dev) / PostgreSQL (production, planned)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Project Status
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+✅ React Native skeleton running on Android emulator
 
-```sh
-# Using npm
-npm start
+## Environment Requirements
 
-# OR using Yarn
-yarn start
+| Component | Version |
+|-----------|---------|
+| React Native | 0.83.1 |
+| Gradle | 8.13 |
+| JDK | 21 (Android Studio embedded JBR) |
+| Android SDK | API 35 |
+| NDK | 27.1.12297006 |
+
+## Setup
+
+### Prerequisites
+
+1. **Android Studio** installed with:
+   - Android SDK (API 35)
+   - NDK (Side by side) via SDK Manager → SDK Tools
+   - Emulator configured
+
+2. **Environment variables** (set permanently):
+   ```
+   JAVA_HOME = C:\Program Files\Android\Android Studio\jbr
+   ANDROID_HOME = C:\Users\<username>\AppData\Local\Android\Sdk
+   ```
+
+3. **Java 21** (use Android Studio's embedded JDK, NOT Oracle Java)
+
+### Running the App
+
+```bash
+# Install dependencies
+cd ChoreChampions
+npm install
+
+# Start Metro bundler (in one terminal)
+npx react-native start
+
+# Run on Android (in another terminal)
+npx react-native run-android
 ```
 
-## Step 2: Build and run your app
+## Roadmap
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+- [ ] Phase 1: Fake Users - User picker, dashboard with points
+- [ ] Phase 2: Chores & Points - Add/complete chores, 8hr window, points
+- [ ] Phase 3: Shop & Inventory - Weapons, durability system
+- [ ] Phase 4: Battle - Challenge flow, combat resolution
+- [ ] Phase 5: Polish & Drops - Special items, buffs
+- [ ] Phase 6: Real Auth - Registration, login, invite codes
 
-### Android
+## Game Concept
 
-```sh
-# Using npm
-npm run android
+1. **Complete chores** → Earn Effort Points and Time Points
+2. **Visit the shop** → Buy weapons with points
+3. **Challenge family members** → Battle using your weapons
+4. **Win battles** → Bragging rights (and maybe chore exemptions?)
 
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Weapons have durability and break over time. Rare drops keep things interesting.
