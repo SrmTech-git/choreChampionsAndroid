@@ -1,26 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { RootNavigator } from './src/navigation/RootNavigator';
+import { UserProvider } from './src/context/UserContext';
+import { colors } from './src/utils/colors';
 
 function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hi Shan! 👋</Text>
-    </View>
+    <SafeAreaProvider>
+      <UserProvider>
+        <StatusBar barStyle="light-content" backgroundColor={colors.background} />
+        <NavigationContainer>
+          <RootNavigator />
+        </NavigationContainer>
+      </UserProvider>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#1a1a2e',
-  },
-  text: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#eee',
-  },
-});
 
 export default App;
